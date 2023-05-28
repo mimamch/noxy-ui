@@ -56,7 +56,7 @@ export const navigationConfig: NavigationTypes = {
       ],
     },
     {
-      title: "Order",
+      title: "Orders",
       items: [
         {
           title: "New Order",
