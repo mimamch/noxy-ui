@@ -1,9 +1,20 @@
-"use client"
+"use client";
 
-import { Row } from "@tanstack/react-table"
-import { Copy, MoreHorizontal, Pen, Star, Tags, Trash } from "lucide-react"
+import { Row } from "@tanstack/react-table";
+import {
+  CheckIcon,
+  ChevronRightIcon,
+  Copy,
+  DotIcon,
+  ListIcon,
+  MoreHorizontal,
+  Pen,
+  Star,
+  Tags,
+  Trash,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,19 +27,19 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
-import { labels } from "../data/data"
-import { taskSchema } from "../data/schema"
+import { labels } from "../data/data";
+import { taskSchema } from "../data/schema";
 
 interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+  row: Row<TData>;
 }
 
 export function DataTableRowActions<TData>({
   row,
 }: DataTableRowActionsProps<TData>) {
-  const task = taskSchema.parse(row.original)
+  const task = taskSchema.parse(row.original);
 
   return (
     <DropdownMenu>
@@ -38,7 +49,6 @@ export function DataTableRowActions<TData>({
           className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
         >
           <MoreHorizontal className="h-4 w-4" />
-          <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
@@ -78,5 +88,5 @@ export function DataTableRowActions<TData>({
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
