@@ -18,6 +18,7 @@ import {
   FormDescription,
   FormMessage,
 } from "@/components/ui/form-react-hook";
+import { useRouter } from "next/navigation";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 const formSchema = z.object({
@@ -26,6 +27,7 @@ const formSchema = z.object({
 });
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -40,6 +42,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     setIsLoading(true);
 
     setTimeout(() => {
+      router.push("/");
       setIsLoading(false);
     }, 3000);
   }
