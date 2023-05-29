@@ -17,6 +17,7 @@ import {
 import React from "react";
 import { CalendarDateRangePicker } from "./components/date-range-picker";
 import { RecentSales } from "./components/recent-sales";
+import DownloadButton from "./components/download-button";
 
 export default function page() {
   return (
@@ -26,10 +27,7 @@ export default function page() {
           <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
           <div className="flex  gap-y-2  flex-wrap items-center ">
             <CalendarDateRangePicker className="mr-2" />
-            <Button size="sm">
-              <Download className="mr-2 h-4 w-4" />
-              Download
-            </Button>
+            <DownloadButton />
           </div>
         </div>
         <Tabs defaultValue="overview" className="space-y-4">

@@ -47,7 +47,7 @@ export function DocsSidebarNavItems({
   selectedPath,
 }: DocsSidebarNavItemsProps) {
   return items?.length ? (
-    <div className="grid grid-flow-row auto-rows-max text-sm">
+    <div className="grid grid-flow-row auto-rows-max text-sm space-y-1">
       {items.map(({ icon: Icon, ...item }, index) =>
         item.href && !item.disabled ? (
           <SidebarItem
