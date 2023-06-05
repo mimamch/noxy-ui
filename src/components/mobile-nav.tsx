@@ -51,7 +51,7 @@ export function MobileNav() {
                 )
             )}
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex max-w-[50vw] flex-col space-y-2">
             {navigationConfig.sidebarNav.map((item, index) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">
                 <h4 className="font-medium">{item.title}</h4>
