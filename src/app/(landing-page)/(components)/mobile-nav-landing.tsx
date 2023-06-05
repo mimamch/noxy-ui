@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icons } from "@/components/icons";
-import { NavItem } from "@/types/nav";
 import { ButtonLink } from "@/components/button-link";
 import { landingNavItem } from "./defaults";
 
@@ -40,10 +39,11 @@ export function MobileNavLanding() {
         </MobileLink>
         <ScrollArea className="my-4 pl-6">
           <div className="flex max-w-[50vw] flex-col  space-y-3">
-            {landingNavItem.map((item) => {
+            {landingNavItem.map((item, i) => {
               if (item.buttonLink) {
                 return (
                   <ButtonLink
+                    key={i}
                     href={item.href}
                     className=" ring-gray-500 focus:ring"
                     size={"sm"}
@@ -54,11 +54,7 @@ export function MobileNavLanding() {
               }
               return (
                 item.href && (
-                  <MobileLink
-                    key={item.href}
-                    href={item.href}
-                    onOpenChange={setOpen}
-                  >
+                  <MobileLink key={i} href={item.href} onOpenChange={setOpen}>
                     {item.title}
                   </MobileLink>
                 )

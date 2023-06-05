@@ -9,7 +9,7 @@ export default function DesktopNavLanding() {
       {landingNavItem.map((e, i) => {
         if (e.buttonLink) {
           return (
-            <ButtonLink size={"sm"} href={e.href ?? "/"}>
+            <ButtonLink key={i} size={"sm"} href={e.href ?? "/"}>
               {e.title}
             </ButtonLink>
           );
