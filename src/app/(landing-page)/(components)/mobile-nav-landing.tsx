@@ -5,15 +5,17 @@ import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { LucideIcon, SidebarOpen } from "lucide-react";
 
-import { navigationConfig } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icons } from "@/components/icons";
+import { NavItem } from "@/types/nav";
+import { ButtonLink } from "@/components/button-link";
+import { landingNavItem } from "./defaults";
 
-export function MobileNav() {
+export function MobileNavLanding() {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -37,9 +39,20 @@ export function MobileNav() {
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 pl-6">
-          <div className="flex max-w-[50vw] flex-col space-y-3">
-            {navigationConfig.mainNav?.map(
-              (item) =>
+          <div className="flex max-w-[50vw] flex-col  space-y-3">
+            {landingNavItem.map((item) => {
+              if (item.buttonLink) {
+                return (
+                  <ButtonLink
+                    href={item.href}
+                    className=" ring-gray-500 focus:ring"
+                    size={"sm"}
+                  >
+                    {item.title}
+                  </ButtonLink>
+                );
+              }
+              return (
                 item.href && (
                   <MobileLink
                     key={item.href}
@@ -49,31 +62,8 @@ export function MobileNav() {
                     {item.title}
                   </MobileLink>
                 )
-            )}
-          </div>
-          <div className="flex flex-col space-y-2">
-            {navigationConfig.sidebarNav.map((item, index) => (
-              <div key={index} className="flex flex-col space-y-3 pt-6">
-                <h4 className="font-medium">{item.title}</h4>
-                {item?.items?.length &&
-                  item.items.map((item, index) => (
-                    <React.Fragment key={index}>
-                      {!item.disabled &&
-                        (item.href ? (
-                          <MobileLink
-                            href={item.href}
-                            icon={item.icon}
-                            onOpenChange={setOpen}
-                          >
-                            {item.title}
-                          </MobileLink>
-                        ) : (
-                          item.title
-                        ))}
-                    </React.Fragment>
-                  ))}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </ScrollArea>
       </SheetContent>

@@ -42,7 +42,6 @@ const SidebarItem = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
     return (
       <Link
         className={cn(sidebarItemVariants({ variant, size, className }))}
-        //   ref={ref}
         href={href!}
         {...props}
       />
