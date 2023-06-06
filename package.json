@@ -29,6 +29,7 @@
     "@types/node": "20.2.4",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
+    "aos": "^2.3.4",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
@@ -51,6 +52,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0"
   }
