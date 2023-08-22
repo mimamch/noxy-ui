@@ -1,13 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1600px",
+        "2xl": "1400px",
       },
     },
     extend: {
@@ -65,12 +70,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-
-      fontFamily: {
-        nunito: ["Nunito Sans", "sans-serif"],
-        sans: ["var(--font-nunito)"],
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}

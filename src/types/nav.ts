@@ -1,3 +1,4 @@
+import { IconProps } from "@radix-ui/react-icons/dist/types";
 import { LucideIcon } from "lucide-react";
 
 export interface NavItem {
@@ -6,7 +7,11 @@ export interface NavItem {
   disabled?: boolean;
   external?: boolean;
   label?: string;
-  icon?: LucideIcon;
+  icon?:
+    | React.ForwardRefExoticComponent<
+        IconProps & React.RefAttributes<SVGSVGElement>
+      >
+    | LucideIcon;
 }
 
 export interface NavItemWithChildren extends NavItem {

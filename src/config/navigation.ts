@@ -1,4 +1,5 @@
 import { MainNavItem, SidebarNavItem } from "@/types/nav";
+import { DashboardIcon } from "@radix-ui/react-icons";
 import {
   FilePlus2,
   FileX,
@@ -51,7 +52,7 @@ export const navigationConfig: NavigationTypes = {
           title: "Dashboard",
           href: "/dashboard",
           items: [],
-          icon: LayoutDashboardIcon,
+          icon: DashboardIcon,
         },
       ],
     },

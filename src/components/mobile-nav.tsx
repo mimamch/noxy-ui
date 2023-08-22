@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import { LucideIcon, SidebarOpen } from "lucide-react";
 
 import { navigationConfig } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
@@ -12,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icons } from "@/components/icons";
+import { ViewVerticalIcon } from "@radix-ui/react-icons";
+import { NavItem } from "@/types/nav";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -23,11 +24,11 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          <SidebarOpen className="h-6 w-6" />
+          <ViewVerticalIcon className="h-6 w-6" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent size="xl" position="left" className="pr-0">
+      <SheetContent side="left" className="pr-0">
         <MobileLink
           href="/"
           className="flex max-w-[50vw] items-center"
@@ -85,7 +86,7 @@ interface MobileLinkProps extends LinkProps {
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;
   className?: string;
-  icon?: LucideIcon;
+  icon?: NavItem["icon"];
 }
 
 function MobileLink({
