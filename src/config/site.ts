@@ -5,8 +5,8 @@ export const siteConfig = {
   description:
     "Beautifully designed components built with Radix UI and Tailwind CSS.",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/mimamch",
+    twitter: "https://twitter.com/mimamch",
+    github: "https://github.com/mimamch/noxy-ui",
   },
 };
 

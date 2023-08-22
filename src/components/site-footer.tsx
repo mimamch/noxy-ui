@@ -1,5 +1,5 @@
-import { siteConfig } from "@/config/site"
-import { Icons } from "@/components/icons"
+import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icons";
 
 export function SiteFooter() {
   return (
@@ -15,7 +15,7 @@ export function SiteFooter() {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              shadcn
+              mimamch
             </a>
             . The source code is available on{" "}
             <a
@@ -31,5 +31,5 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
